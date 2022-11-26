@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
         if @comment.save 
             redirected_to article_comment_path
         else
-            redner :new
+            render :new
         end
     end
 
