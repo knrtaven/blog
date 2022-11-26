@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_14_114327) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_24_120235) do
   create_table "articles", force: :cascade do |t|
     t.string "name"
     t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string "body"
+    t.integer "article_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -22,6 +29,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_14_114327) do
     t.string "title"
     t.string "description"
     t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "wikis", force: :cascade do |t|
+    t.string "name"
+    t.integer "year_model"
+    t.string "chassis_model"
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,0 +1,28 @@
+<%= form_with scope: :article, url: @article, local: true, method: :put do |f| %>
+    <p>
+      <% if @article.errors.any? %>
+        <ul>
+          <% @article.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <%end%>
+        </ul>
+      <% end %>
+    </p>
+
+    <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+    <p>
+
+    <p>
+    <%= f.label :body %><br>
+    <%= f.text_field :body %>
+    </p>
+
+    <p>
+    <%= f.submit %><br>
+    </p>
+    <p>
+    <%= link_to 'Cancel', :back %><br>
+    </p>
+<% end %>

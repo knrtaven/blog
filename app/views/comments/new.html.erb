@@ -1,0 +1,25 @@
+<%= form_with model: [@article, @comment], local: true do |f| %>
+<p>
+  <% if @comment.errors.any? %>
+    <ul>
+        <%@comment.errors.full_messages.each do%>
+            <li><%= message %></li>
+        <% end %>
+    </ul>
+  <% end %>
+</p>
+
+<p>
+    <%= f.label :body %><br/>
+    <%= f.text_field :body %><br/>
+</p>
+
+<p>
+<%= f.submit%>
+</p>
+
+<p>
+<%= button_to 'Cancel', :back %><br/>
+</p>
+
+<% end %>
