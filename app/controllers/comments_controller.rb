@@ -18,9 +18,9 @@ class CommentsController < ApplicationController
         end
     end
 
-    def show
-        @comment = 
-    end
+    # def show
+    #     @comment = 
+    # end
 
     private
 
