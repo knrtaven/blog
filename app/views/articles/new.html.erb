@@ -10,16 +10,20 @@
     </p>
 
     <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
     <p>
 
     <p>
-    <%= f.label :body %><br>
-    <%= f.text_field :body %>
+      <%= f.label :body %><br>
+      <%= f.text_field :body %>
     </p>
 
     <p>
-    <%= f.submit %><br>
+      <%= f.submit %><br>
+    </p>
+
+    <p>
+      <%= link_to 'Cancel', articles_path %>
     </p>
 <% end %>

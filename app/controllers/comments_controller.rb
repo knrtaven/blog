@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
     before_action :get_article
 
     def index
-        @acomments = @article.comments
+        @comment = @article.comments
     end
 
     def new
@@ -12,15 +12,33 @@ class CommentsController < ApplicationController
     def create
         @comment = @article.comments.build(comment_params)
         if @comment.save 
-            redirected_to article_comment_path
+            redirect_to article_comments_path
         else
             render :new
         end
     end
 
-    # def show
-    #     @comment = 
-    # end
+    def show
+        @comment = @article.comments.find(params[:id])
+    end
+
+    def edit
+        @comment = @article.comments.find(params[:id])
+    end
+
+    def update
+        @comment = @article.comments.find(params[:id])
+
+        if @comment.update(comment_params)
+            redirect_to article_comments_path
+        else
+            render :edit
+        end
+    end
+
+    def destroy
+        
+    end
 
     private
 
